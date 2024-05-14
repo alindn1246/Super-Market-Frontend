@@ -1,0 +1,94 @@
+
+  
+  #swiper-cardcasoul .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #swiper-cardcasoul .swiper-slide {
+   
+   margin-top: 50px;
+   margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+ 
+  
+    
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  #swiper-cardcasoul .swiper-pagination-bullets .swiper-pagination-bullet {
+    background: red;
+    transition: 0.3s;
+    scale: 1.25;
+    display: inline-block; /* Ensure bullets are displayed inline */
+    margin: -10px 5px; /* Adjust the spacing between bullets */
+  }
+
+  /* Custom styles for Swiper container */
+.swiper-container {
+  position: relative; /* Ensure positioning of the buttons */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(51, 51, 51, 0.5);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.swiper-button-prev {
+  left: 0px;
+  margin-right: 40px;
+}
+
+.swiper-button-next {
+  right: 0px;
+  margin-left: 40px;
+
+}
+
+
+/* Hover effect */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(51, 51, 51, 0.7); /* Increase opacity on hover */
+}
+
+/* Custom styles for the arrow icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff; /* Arrow shape */
+  border-right: 2px solid #fff; /* Arrow shape */
+  transform: rotate(45deg); /* Rotate the arrow */
+}
+.swiper-button-prev::after {
+  transform: rotate(-135deg); /* Rotate the next arrow in the opposite direction */
+}
+.swiper-button-prev::after {
+  margin-left: 3px; /* Center horizontally within the circle */
+}
+
+.swiper-button-next::after {
+  margin-right: 3px; /* Center horizontally within the circle */
+}
+  

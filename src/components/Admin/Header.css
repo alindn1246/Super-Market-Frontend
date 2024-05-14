@@ -1,0 +1,65 @@
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+  font-size: small;
+}
+.navbar-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the navbar appears on top of other content */
+  width: 100%;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+  color: red;
+}
+.offcanvas{
+ height: 100%;
+}
+
+@media (min-width: 0px) and (max-width: 599px) {
+  .nav-link-xs-margin {
+    margin-right: 0px; /* For extra small screens and up */
+  }
+  
+
+}
+
+@media (min-width: 600px) {
+  .nav-link-md-margin {
+    margin-right: 25px; /* For small, medium, large, and extra large screens */
+  }
+
+
+  
+}
+
+
+.logo-container {
+  width: 64px; /* Adjust width as needed */
+  height: 43px; /* Adjust height as needed */
+  background-color: #DE0724; /* Background color */
+  border-radius: 50%; /* Make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'POPINS'; /* Font family */
+  color: white; /* Text color */
+  font-size: 25px; /* Font size */
+  font-style: italic; /* Font style */
+  font-weight: bold; /* Font weight */
+}
+
+.registered {
+  font-size: 0.3em; /* Adjust size of registered symbol */
+  vertical-align: super; /* Align registered symbol above the text */
+}
+
+
+
+
+
+
+
+
+

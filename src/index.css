@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:300,400,500&display=swap');
+
+/* For Light 300 */
+.selector {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/* For Regular 400 */
+.another-selector {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+/* For Medium 500 */
+.yet-another-selector {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+.border{
+    border: 2px solid red !important;
+}

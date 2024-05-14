@@ -1,0 +1,70 @@
+  
+ 
+  .dropdownMenu:hover .menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+   
+  }
+  
+  .menu {
+    position: absolute;
+    
+    left: 0;
+    width: 100%;
+    height: 170px;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+    box-shadow: 0 40px 60px rgb(0 0 0 / 3%);
+    transition: 0.5s;
+    z-index: 1000;
+  }
+  
+  .linksMenu {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 30px;
+    font-size: 14px;
+  } 
+  
+   #swipe-headerbottom .swiper-slide {
+    display: flex;
+    gap: 24px;
+    height: 160px;
+    padding: 0 100px 0 20px;
+  }
+  
+  #swipe-headerbottom .swiper-slide > img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    background: #f4f4fd;
+    padding: 10px;
+    margin-top: 2px;
+    margin-left: 10px;
+    border-radius: 50%;
+  }
+  
+  #swipe-headerbottom .swiper-slide > div {
+    flex: 1 1 auto;
+  }
+  
+  #swipe-headerbottom .swiper-horizontal > .swiper-pagination-bullets {
+    bottom: 12px;
+    left: 0;
+    width: 100%; /* Adjust to your preference */
+    text-align: center; /* Center the bullets */
+  }
+  
+  #swipe-headerbottom  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    background: #6c63ff;
+    transition: 0.3s;
+    scale: 1.25;
+    display: inline-block; /* Ensure bullets are displayed inline */
+    margin: 0 5px; /* Adjust the spacing between bullets */
+  }
+  

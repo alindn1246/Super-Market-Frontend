@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate,Link } from 'react-router-dom';
 
@@ -49,7 +49,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="container border p-4">
+    <Container fluid className="mt-4">
       <div className="row text-center p-3">
         <h1>Register</h1>
       </div>
@@ -102,8 +102,9 @@ const RegistrationForm = () => {
           Register
         </Button>
         
+        
       </Form>
-    </div>
+    </Container>
   );
 };
 

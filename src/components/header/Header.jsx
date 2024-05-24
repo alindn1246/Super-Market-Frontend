@@ -1,15 +1,14 @@
 import React, { useState,useEffect } from "react";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { AccountCircle, Margin, ShoppingCart } from "@mui/icons-material";
+import { AccountCircle } from "@mui/icons-material";
+import { FaCartShopping } from "react-icons/fa6";
 import CloseIcon from '@mui/icons-material/Close';
 import ModalSearch from './ModalSearch'
-import { Box, IconButton, Stack, Typography } from "@mui/material";
+import { IconButton, Stack, Typography } from "@mui/material";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import './Header.css'
 import Cart from "./cart/Cart";
@@ -17,6 +16,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Favourite from "./favourite/Favourite";
+import HeaderBottomList from "./HeaderBottomList";
+
 function Header() {
   const { cartTotalQuantity } = useSelector((state) => state.cart);
   const { favouriteTotalQuantity } = useSelector((state) => state.favourite);
@@ -69,6 +70,7 @@ function Header() {
     }
 
   }, []);
+  
  console.log(isLoggedIn) 
  console.log(user)
   console.log(token)
@@ -125,7 +127,7 @@ function Header() {
 
               <Col lg={2}  className="order-lg-2 ">
               
-            <Navbar.Offcanvas
+            <Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="top"
@@ -151,33 +153,15 @@ function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body className="  ">
                 
-                <Nav className="justify-content-start pe-3 " >
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown
-                    title={<span>Discover</span>}
-                    id="basic-nav-dropdown"
-                    show={showDropdown}
-                    onMouseEnter={() => setShowDropdown(true)}
-                    onMouseLeave={() => setShowDropdown(false)}
-                  >
-                    <NavDropdown.Item href="#action/3.1">
-                      Action
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
-                      Something
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                      Separated link
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
+                
+                <h3>
+                <FaCartShopping style={{fontSize:"35px", marginRight:"5px"}}/> 
+                Shop By Category
+                </h3>
+                <HeaderBottomList isAdmin={false}   closeOffcanvas={() => setShowOffcanvas(false)} />
+               
               </Offcanvas.Body>
-            </Navbar.Offcanvas>
+            </Offcanvas>
             </Col>
            
               
@@ -189,7 +173,7 @@ function Header() {
               order-2 order-lg-4   ">
 
                
-<Nav.Link href="#account" className="nav-link-xs-margin nav-item-xs">
+<Nav.Link  className="nav-link-xs-margin nav-item-xs">
       {isLoggedIn?
         <Stack direction="row" alignItems="center">
           <Dropdown style={{ border: 'none' }} >
@@ -215,9 +199,11 @@ function Header() {
         </Stack>
         :
         <Stack direction="row" alignItems="center">
-          <Link to={"/LogIn"}>
-            <AccountCircle sx={{ color: "#DE0724", fontSize: "40px" }} />
-          </Link>
+       
+       <IconButton onClick={handleLogout} sx={{ color: "#DE0724" }}>
+      <AccountCircle sx={{ fontSize: "40px" }} />
+    </IconButton>
+          
           <Stack>
             <Typography sx={{ color: "white", fontSize: "12px", fontFamily: "popins" }}>
               HI Guest

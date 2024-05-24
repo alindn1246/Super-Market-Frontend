@@ -1,11 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate,Link } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
-  const navigate = useNavigate();
-
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,30 +20,27 @@ const LoginForm = () => {
       const { isSuccess, result } = response.data;
 
       if (isSuccess && result.user.roles.includes('CUSTOMER')) {
-        console.log(result.user)
-        localStorage.setItem('user',JSON.stringify(result.user))
+        localStorage.setItem('isLoggedIn', true);
+        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.token); 
+       
+        setIsLoggedIn(true);
+        window.location.href = '/';
+      }
+      if (isSuccess && result.user.roles.includes('ADMIN')) {
+        localStorage.setItem('user', JSON.stringify(result.user));
         localStorage.setItem('token', result.token); 
         localStorage.setItem('isLoggedIn', true);
         setIsLoggedIn(true);
-        navigate('/');
-       
-      }
-     if (isSuccess && result.user.roles.includes('ADMIN')) {
-      localStorage.setItem('user',JSON.stringify(result.user))
-      localStorage.setItem('token', result.token); 
-      localStorage.setItem('isLoggedIn', true);
-      setIsLoggedIn(true);
-      navigate('/Admin');
+        window.location.href = '/Admin';
       }
     } catch (error) {
       console.error('Error occurred while logging in:', error);
     }
   };
 
-
-
   return (
-    <div className="container border p-4">
+    <Container fluid className="mt-4">
       <div className="row text-center">
         <h1>Login</h1>
       </div>
@@ -78,10 +73,10 @@ const LoginForm = () => {
           >
             Login
           </button>
-          <span>I dont have an account <Link to={"/Register"}> Register</Link></span>
+          <span>I don't have an account <Link to="/Register">Register</Link></span>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

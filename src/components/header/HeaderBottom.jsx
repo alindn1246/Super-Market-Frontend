@@ -225,10 +225,11 @@ const HeaderBottom = () => {
  
   return (
     <>
-      {isLargeScreen && ( // Render the Navbar only when screen size is not large
+      {isLargeScreen && ( 
         <Navbar className="header-bottom-navbar" style={{ padding: "8px", background: "#393939", position: "relative" }}>
           <Container fluid>
-            <div className="d-flex">
+            <div className="d-flex  w-100 justify-content-center" >
+            
               {slides.map((slide, index) => (
                 <div className={`dropdownMenu ${isDropDownOpen ? 'open' : ''}`} key={index} style={{ textAlign: "center" }}>
                   <Button
@@ -247,6 +248,7 @@ const HeaderBottom = () => {
                   >
                     {slide.name}
                   </Button>
+                  
 
                   <div className="menu">
                     <Swiper

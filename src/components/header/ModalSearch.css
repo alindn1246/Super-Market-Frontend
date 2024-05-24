@@ -1,4 +1,16 @@
-
+.listItem {
+    cursor: pointer;
+    color: black;
+    border: 1px solid #E5E7EB;
+    z-index: 1001;
+    transition: background-color 0.3s;
+  }
+  
+  .listItem:hover {
+    background-color: #f1f1f1;
+    color: white;
+  }
+  
 
 
 

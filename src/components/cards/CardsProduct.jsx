@@ -50,7 +50,13 @@ const CardsProduct = ({ products }) => {
     }
   }, []);
   const handleAddToFavourite = (product) => {
-    dispatch(addToFavourite({ product, userId: user.id }));
+    if(isLoggedIn){
+      dispatch(addToFavourite({ product, userId: user.id }));
+    }
+    else{
+      alert('Please LogIn to your account')
+    }
+    
   };
 
   const handleAddToCart = (product) => {
@@ -73,7 +79,13 @@ const CardsProduct = ({ products }) => {
   };
 
   const handleRemoveFromFavourite = (product) => {
-    dispatch(removeFromFavourite({ product, userId: user.id }));
+    if(isLoggedIn){
+      dispatch(removeFromFavourite({ product, userId: user.id }));
+    }
+    else{
+      alert('Please LogIn to your account')
+    }
+   
   };
 
 

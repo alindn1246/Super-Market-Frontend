@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import { useMediaQuery } from "@mui/material";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { AccountCircle, Margin, ShoppingCart } from "@mui/icons-material";
 import CloseIcon from "@mui/icons-material/Close";
-
+import HeaderBottomList from '../header/HeaderBottomList'
 import { Box, IconButton, Stack, Typography } from "@mui/material";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import "./Header.css";
@@ -24,7 +25,6 @@ function AdminNavBar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <AccountCircle
-      href=""
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
@@ -87,6 +87,7 @@ function AdminNavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const isSmallerThan992 = useMediaQuery("(max-width:992px)");
   return (
     <>
       {["lg"].map((expand) => (
@@ -175,6 +176,8 @@ function AdminNavBar() {
                         
                       </NavDropdown>
                     </Nav>
+                    {isSmallerThan992? <HeaderBottomList isAdmin={true}   closeOffcanvas={() => setShowOffcanvas(false)} /> : <></>}
+                    
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>
               </Col>
@@ -186,7 +189,7 @@ function AdminNavBar() {
               order-2 order-lg-4 "
               >
                 <Nav.Link
-                  href="#account"
+                  
                   className="nav-link-xs-margin nav-item-xs"
                 >
                   {isLoggedIn ? (
@@ -218,27 +221,9 @@ function AdminNavBar() {
                       </Stack>
                     </Stack>
                   ) : (
-                    <Stack direction="row" alignItems="center">
-                      <Link to={"/LogIn"}>
-                        <AccountCircle
-                          sx={{ color: "#DE0724", fontSize: "40px" }}
-                        />
-                      </Link>
-                      <Stack>
-                        <Typography
-                          sx={{
-                            color: "white",
-                            fontSize: "12px",
-                            fontFamily: "popins",
-                          }}
-                        >
-                          HI Guest
-                        </Typography>
-                        <Typography sx={{ color: "#A0A38D", fontSize: "9px" }}>
-                          Sign In or Register
-                        </Typography>
-                      </Stack>
-                    </Stack>
+                   <div>
+
+                   </div>
                   )}
                 </Nav.Link>
               </Col>

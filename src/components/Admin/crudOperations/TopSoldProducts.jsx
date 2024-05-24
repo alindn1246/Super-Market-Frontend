@@ -54,7 +54,7 @@ export default function TopSoldProducts() {
                     </thead>
                     <tbody>
                         {data && data.map((product) => (
-                            <tr key={product.id}>
+                            <tr key={product.product.productName}>
                                 <td>{product.product.productName}</td>
                                 <td>{product.totalSalesAmount}</td>
                             </tr>

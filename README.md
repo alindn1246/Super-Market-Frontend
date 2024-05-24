@@ -1,3 +1,25 @@
+Supermarket Website - Frontend
+This repository contains the frontend implementation of a Supermarket Website developed using React. The frontend integrates with the backend ASP.NET Web API to provide a seamless user experience for browsing products, managing orders, and utilizing features like adding to cart and favorites. Redux is utilized for state management, and user authentication is implemented using JWT tokens, with user data and session management stored in local storage.
+
+Features
+Product Catalog: Browse through a wide range of products categorized by type and brand.
+Search Functionality: Easily search for products by name or category.
+Product Details: View detailed information about each product, including price, description, and availability.
+Shopping Cart: Add products to the shopping cart, review the cart contents, and proceed to checkout.
+Favorites: Mark products as favorites for quick access later.
+User Authentication: Register an account, log in with existing credentials, and maintain a secure session using JWT tokens.
+User Profile: View and update user profile information, including shipping address and contact details.
+Order History: Access a history of past orders and view order details.
+Technologies Used
+React: A JavaScript library for building user interfaces, providing a component-based architecture for creating reusable UI elements.
+Redux: A predictable state container for JavaScript apps, enabling centralized state management and facilitating actions like adding to cart and managing favorites.
+React Router: A routing library for React applications, enabling navigation between different components while maintaining UI state.
+JWT Authentication: JSON Web Tokens are used for secure authentication and authorization, with user sessions managed via local storage.
+Axios: A promise-based HTTP client for making requests to the backend API endpoints.
+LocalStorage: Used to persist user session data, favorites, and cart items locally in the browser.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
